@@ -38,8 +38,6 @@ public class EmployeePayrollService {
 
     /**
      * Purpose : To read the information of Employees from the console
-     *
-     * @param consoleInputReader takes the information of employees
      */
     private void readEmployeePayrollData(Scanner consoleInputReader) {
         System.out.println("Enter Employee ID : ");
@@ -52,7 +50,7 @@ public class EmployeePayrollService {
         employeePayrollList.add(new EmployeePayrollData(id, name, salary));
     }
 
-    /* This method is implementing to write the Employee Payroll to the console */
+    // This method is implementing to write the Employee Payroll to the console
     public void writeEmployeePayrollData(IOService ioService) {
         if (ioService.equals(IOService.CONSOLE_IO))
             System.out.println("\nWriting Employee Payroll Roaster to console\n" + employeePayrollList);
@@ -61,7 +59,7 @@ public class EmployeePayrollService {
         }
     }
 
-    /* This method is implementing to count entries in a file */
+    // This method is implementing to count entries in a file 
     public long countEntries(IOService ioService) {
         if (ioService.equals(IOService.FILE_IO))
             return new EmployeePayrollFileIOService().countEntries();
