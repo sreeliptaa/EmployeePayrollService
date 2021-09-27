@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 /**
  * Purpose - To implement Employee PayRoll Service System
+ *
  * @author - Sreelipta
  * @since - 2021-09-26
  */
@@ -67,9 +68,16 @@ public class EmployeePayrollService {
     }
 
     //method to print entries from a file
-    public void printData(IOService ioService){
-        if(ioService.equals(IOService.FILE_IO))
+    public void printData(IOService ioService) {
+        if (ioService.equals(IOService.FILE_IO))
             new EmployeePayrollFileIOService().printData();
+    }
+
+    // This method is reading each line of file
+    public long readEmployeePayrollData(IOService ioService) {
+        if (ioService.equals(IOService.FILE_IO))
+            this.employeePayrollList = new EmployeePayrollFileIOService().readData();
+        return employeePayrollList.size();
     }
 }
 
